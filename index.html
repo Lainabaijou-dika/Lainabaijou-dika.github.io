@@ -717,6 +717,148 @@
       font-size: 0.78rem;
     }
 
+    /* CERTIFICATIONS */
+    .certif-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 700px) { .certif-grid { grid-template-columns: 1fr; } }
+
+    .certif-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.8rem;
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .certif-card:hover { border-color: rgba(124,107,255,0.4); transform: translateY(-2px); }
+
+    .certif-logo-wrap {
+      width: 52px;
+      height: 52px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .certif-body { flex: 1; }
+    .certif-org {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+    .certif-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+    .certif-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    .btn-certif {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 1.1rem;
+      border-radius: 6px;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      background: rgba(124,107,255,0.12);
+      color: var(--accent2);
+      border: 1px solid rgba(124,107,255,0.25);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-certif:hover { background: rgba(124,107,255,0.25); border-color: var(--accent); color: var(--text); }
+
+    /* ATTESTATION BUTTON */
+    .btn-attestation {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.2rem;
+      padding: 0.55rem 1.1rem;
+      border-radius: 6px;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      background: rgba(56,189,248,0.08);
+      color: var(--accent3);
+      border: 1px solid rgba(56,189,248,0.2);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-attestation:hover { background: rgba(56,189,248,0.18); border-color: var(--accent3); }
+
+    /* VEILLE TIMELINE */
+    .veille-months {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    @media (max-width: 800px) { .veille-months { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 500px) { .veille-months { grid-template-columns: 1fr; } }
+
+    .veille-period {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      position: relative;
+    }
+    .veille-period::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      border-radius: 8px 8px 0 0;
+    }
+    .veille-period-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+    .veille-period-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .veille-period p { font-size: 0.78rem; color: var(--muted); line-height: 1.6; }
+
+    /* VEILLE SOURCES */
+    .veille-sources {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.8rem;
+    }
+    .source-tag {
+      font-size: 0.72rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      background: rgba(56,189,248,0.08);
+      color: var(--accent3);
+      border: 1px solid rgba(56,189,248,0.2);
+      letter-spacing: 0.04em;
+    }
+
     @media (max-width: 768px) {
       section { padding: 80px 5vw; }
       .stage-card { grid-template-columns: 1fr; }
@@ -738,6 +880,7 @@
       <li><a href="#stage">stage</a></li>
       <li><a href="#diplomes">diplômes</a></li>
       <li><a href="#synthese">synthèse</a></li>
+      <li><a href="#certifications">certifications</a></li>
       <li><a href="#veille">veille</a></li>
       <li><a href="#contact">contact</a></li>
     </ul>
@@ -911,7 +1054,7 @@
         <div>
           <div class="stage-meta">
             <div class="stage-company">Nat-Immobilier</div>
-            <div class="stage-period">14 Janvier — 24 Février 2025 · 2ème année BTS SIO</div>
+            <div class="stage-period">14 Janvier — 24 Février 2026 · 2ème année BTS SIO</div>
           </div>
           <div class="stage-missions">
             <h4>Missions réalisées</h4>
@@ -922,6 +1065,10 @@
               <li>Déploiement et mise en production du site web</li>
             </ul>
           </div>
+          <a href="attestation_stage2.pdf" download class="btn-attestation">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            Voir l'attestation de stage
+          </a>
         </div>
         <div>
           <div class="stage-badge">
@@ -943,10 +1090,14 @@
             <ul>
               <li>Redéploiement des images système sur l'ensemble du parc informatique du lycée</li>
               <li>Configuration et paramétrage de chaque poste pour la rentrée scolaire</li>
+              <li>Gestion de GLPI (gestion du parc et des tickets incidents)</li>
               <li>Tests de fonctionnement et validation des installations</li>
-              <li>Mise à jour des logiciels et vérification de la conformité du parc</li>
             </ul>
           </div>
+          <a href="attestation_stage1.pdf" download class="btn-attestation">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            Voir l'attestation de stage
+          </a>
         </div>
         <div>
           <div class="stage-badge">
@@ -1107,39 +1258,130 @@
 
   <hr class="divider"/>
 
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <p class="section-label"><span>// 06 —</span> Certifications</p>
+    <h2>Mes Certifications</h2>
+    <p class="section-intro">Certifications obtenues dans le cadre du BTS SIO et du développement professionnel.</p>
+
+    <div class="certif-grid">
+
+      <div class="certif-card">
+        <div class="certif-logo-wrap pix-bg">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+            <rect width="36" height="36" rx="8" fill="#1B3A8A"/>
+            <text x="18" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="white" font-family="sans-serif">PIX</text>
+          </svg>
+        </div>
+        <div class="certif-body">
+          <div class="certif-org">Pix — Certification officielle</div>
+          <h3 class="certif-title">Certification Pix</h3>
+          <p class="certif-desc">Certification nationale des compétences numériques. Évalue les aptitudes en information et données, communication et collaboration, création de contenu numérique, protection et sécurité, et environnement numérique.</p>
+          <a href="certification_pix.pdf" download class="btn-certif">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            Télécharger la certification
+          </a>
+        </div>
+      </div>
+
+      <div class="certif-card">
+        <div class="certif-logo-wrap cnil-bg">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+            <rect width="36" height="36" rx="8" fill="#003189"/>
+            <text x="18" y="16" text-anchor="middle" font-size="8" font-weight="bold" fill="white" font-family="sans-serif">CNIL</text>
+            <text x="18" y="27" text-anchor="middle" font-size="6" fill="#81c3f8" font-family="sans-serif">RGPD</text>
+          </svg>
+        </div>
+        <div class="certif-body">
+          <div class="certif-org">CNIL — Commission Nationale</div>
+          <h3 class="certif-title">Certification RGPD</h3>
+          <p class="certif-desc">Certification sur la protection des données personnelles délivrée par la CNIL. Couvre les principes fondamentaux du RGPD, les droits des personnes, les obligations des organisations et la mise en conformité.</p>
+          <a href="certification_rgpd.pdf" download class="btn-certif">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            Télécharger la certification
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider"/>
+
   <!-- VEILLE -->
   <section id="veille">
-    <p class="section-label"><span>// 06 —</span> Veille</p>
+    <p class="section-label"><span>// 07 —</span> Veille</p>
     <h2>Veille Technologique</h2>
-    <p class="section-intro">Surveillance continue des évolutions technologiques liées au développement logiciel.</p>
+    <p class="section-intro">Suivi sur 18 mois (octobre 2024 — mars 2026) des évolutions de l'Intelligence Artificielle dans le développement logiciel.</p>
 
     <div class="veille-grid">
 
       <div class="veille-card accent-card">
-        <h3>🤖 L'Intelligence Artificielle dans le développement logiciel</h3>
-        <p>
-          La veille technologique consiste à surveiller les innovations du secteur pour anticiper les changements et rester compétitif. L'IA générative transforme profondément les pratiques de développement : génération de code, détection de bugs, automatisation des tests. Des outils comme GitHub Copilot, ChatGPT ou Tabnine deviennent incontournables pour les développeurs.
-        </p>
+        <h3>🤖 L'IA dans le développement logiciel — 18 mois de veille</h3>
+        <p>Sujet suivi d'<strong>octobre 2024 à mars 2026</strong>. L'intelligence artificielle générative a profondément transformé les pratiques de développement logiciel. Des outils comme <strong>GitHub Copilot, ChatGPT, Gemini ou Claude</strong> sont désormais intégrés au quotidien des développeurs pour générer du code, détecter des bugs et automatiser des tâches répétitives.</p>
+      </div>
+
+      <div class="veille-card" style="grid-column: 1 / -1;">
+        <h3>📅 Évolution sur 18 mois</h3>
+        <div class="veille-months">
+          <div class="veille-period">
+            <div class="veille-period-label">Oct. — Déc. 2024</div>
+            <div class="veille-period-title">Émergence des assistants IA</div>
+            <p>GitHub Copilot devient incontournable. Sortie de GPT-4o et intégration dans VS Code. Les développeurs commencent à adopter massivement l'autocomplétion intelligente.</p>
+          </div>
+          <div class="veille-period">
+            <div class="veille-period-label">Jan. — Avr. 2025</div>
+            <div class="veille-period-title">Montée en puissance des LLMs</div>
+            <p>Claude 3.5, Gemini 2.0, GPT-4.5 : la concurrence s'intensifie. Apparition des premiers agents IA capables de coder des projets entiers de façon autonome.</p>
+          </div>
+          <div class="veille-period">
+            <div class="veille-period-label">Mai — Sept. 2025</div>
+            <div class="veille-period-title">IA agents & automatisation</div>
+            <p>Les agents IA (Cursor, Devin, Claude Code) gèrent des tâches complexes : refactorisation, tests, déploiement. Le développement low-code assisté par IA explose.</p>
+          </div>
+          <div class="veille-period">
+            <div class="veille-period-label">Oct. 2025 — Mars 2026</div>
+            <div class="veille-period-title">IA dans les métiers SIO</div>
+            <p>Intégration dans les formations BTS SIO. Copilot dans GitHub Education. Débat sur les compétences attendues pour les futurs développeurs face à l'IA omniprésente.</p>
+          </div>
+        </div>
       </div>
 
       <div class="veille-card">
-        <h3>✅ Avantages</h3>
+        <h3>✅ Avantages observés</h3>
         <ul class="veille-list">
-          <li><strong>Productivité</strong> — Génération de code rapide avec Copilot, ChatGPT</li>
-          <li><strong>Qualité</strong> — Détection de bugs et propositions d'optimisation</li>
-          <li><strong>Automatisation</strong> — Tests unitaires, documentation, CI/CD</li>
-          <li><strong>Innovation</strong> — Chatbots, NLP, systèmes de recommandation</li>
+          <li><strong>Productivité ×2</strong> — Autocomplétion intelligente (Copilot, Tabnine)</li>
+          <li><strong>Qualité du code</strong> — Détection de bugs en temps réel, refactorisation</li>
+          <li><strong>Automatisation</strong> — Tests unitaires, documentation, CI/CD assisté</li>
+          <li><strong>Accessibilité</strong> — Les débutants progressent plus vite</li>
+          <li><strong>Innovation</strong> — Chatbots, NLP, recommandations développés rapidement</li>
         </ul>
       </div>
 
       <div class="veille-card">
-        <h3>⚠️ Inconvénients</h3>
+        <h3>⚠️ Limites & risques identifiés</h3>
         <ul class="veille-list">
-          <li><strong>Dépendance</strong> — Risque de perte de compétences fondamentales</li>
-          <li><strong>Fiabilité</strong> — Code généré non toujours optimal, vérification nécessaire</li>
-          <li><strong>Éthique & juridique</strong> — Propriété intellectuelle et données sensibles</li>
-          <li><strong>Emploi</strong> — Automatisation de certains postes techniques</li>
+          <li><strong>Dépendance</strong> — Perte possible des compétences fondamentales</li>
+          <li><strong>Fiabilité</strong> — Code généré parfois erroné, relecture indispensable</li>
+          <li><strong>RGPD</strong> — Confidentialité des données soumises aux IA</li>
+          <li><strong>Emploi</strong> — Automatisation des postes juniors, évolution du métier</li>
+          <li><strong>Sécurité</strong> — Failles (injections SQL, XSS) non détectées par l'IA</li>
         </ul>
+      </div>
+
+      <div class="veille-card" style="grid-column: 1 / -1;">
+        <h3>🔍 Sources de veille utilisées</h3>
+        <div class="veille-sources">
+          <span class="source-tag">GitHub Blog</span>
+          <span class="source-tag">Le Monde Informatique</span>
+          <span class="source-tag">Journal du Net</span>
+          <span class="source-tag">01net.com</span>
+          <span class="source-tag">OpenAI Blog</span>
+          <span class="source-tag">Anthropic Blog</span>
+          <span class="source-tag">Google Developers</span>
+          <span class="source-tag">Stack Overflow Survey</span>
+          <span class="source-tag">CNIL.fr</span>
+        </div>
       </div>
 
     </div>
@@ -1151,18 +1393,18 @@
   <section id="contact">
     <div class="contact-wrapper">
       <div class="contact-text">
-        <p class="section-label"><span>// 07 —</span> Contact</p>
+        <p class="section-label"><span>// 08 —</span> Contact</p>
         <h2>Travaillons<br/>ensemble</h2>
         <p>Tu veux collaborer sur un projet ou me contacter pour une opportunité ? N'hésite pas à me joindre.</p>
       </div>
       <div class="contact-links">
-        <a href="/cdn-cgi/l/email-protection#87ebe6eee9e6e5e6eeede8f2c7e0eae6eeeba9e4e8ea" class="contact-link">
+        <a href="mailto:lainabaijou@gmail.com" class="contact-link">
           <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
           </svg>
-          <span class="__cf_email__" data-cfemail="fe929f97909f9c9f9794918bbe99939f9792d09d9193">[email&#160;protected]</span>
+          lainabaijou@gmail.com
         </a>
-        <a href="https://github.com" target="_blank" class="contact-link">
+        <a href="https://github.com/lainabaijou-dika" target="_blank" class="contact-link">
           <svg viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
           </svg>
@@ -1170,4 +1412,11 @@
         </a>
       </div>
     </div>
-  <
+  </section>
+
+  <footer>
+    © 2026 <span>Laina Baïjou-Dika</span>. Tous droits réservés. · BTS SIO · SLAM
+  </footer>
+
+</body>
+</html>
