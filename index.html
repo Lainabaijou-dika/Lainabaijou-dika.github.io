@@ -644,11 +644,8 @@
       flex-direction: column;
       gap: 1.5rem;
     }
-    .synthese-header {
-      background: linear-gradient(135deg, rgba(124,107,255,0.1), rgba(192,132,252,0.06));
-      border: 1px solid rgba(124,107,255,0.3);
-      border-radius: 12px;
-      padding: 1.8rem 2rem;
+    .synthese-header-old-removed {
+      /* merged into new style below */
     }
     .synthese-title-main {
       font-family: 'Syne', sans-serif;
@@ -715,6 +712,114 @@
       color: var(--accent);
       white-space: nowrap;
       font-size: 0.78rem;
+    }
+
+    .option-badge {
+      font-size: 0.78rem;
+      color: var(--accent2);
+      font-weight: 600;
+    }
+    .option-badge-off {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .synthese-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    /* GRAND TABLEAU COMPÉTENCES */
+    .synthese-full-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.78rem;
+      min-width: 900px;
+    }
+    .th-realisation {
+      text-align: left;
+      padding: 0.8rem 1rem;
+      background: rgba(124,107,255,0.1);
+      color: var(--text);
+      font-family: 'Syne', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+      border: 1px solid var(--border);
+      width: 38%;
+      vertical-align: middle;
+    }
+    .th-periode {
+      text-align: center;
+      padding: 0.8rem 0.6rem;
+      background: rgba(124,107,255,0.1);
+      color: var(--text);
+      font-family: 'Syne', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+      border: 1px solid var(--border);
+      width: 10%;
+      vertical-align: middle;
+    }
+    .th-competences-title {
+      text-align: center;
+      padding: 0.6rem;
+      background: rgba(124,107,255,0.15);
+      color: var(--accent2);
+      font-family: 'Syne', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      border: 1px solid var(--border);
+    }
+    .th-comp {
+      text-align: center;
+      padding: 0.6rem 0.4rem;
+      background: rgba(124,107,255,0.07);
+      color: var(--muted);
+      font-size: 0.65rem;
+      letter-spacing: 0.03em;
+      border: 1px solid var(--border);
+      vertical-align: top;
+      line-height: 1.4;
+      width: 8.7%;
+    }
+    .synthese-full-table td {
+      padding: 0.7rem 0.8rem;
+      border: 1px solid var(--border);
+      color: var(--text);
+      line-height: 1.5;
+      vertical-align: middle;
+    }
+    .td-period {
+      text-align: center;
+      color: var(--accent) !important;
+      font-size: 0.72rem;
+      white-space: nowrap;
+    }
+    .td-check {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      width: 8.7%;
+    }
+    .td-check.checked {
+      color: var(--accent2);
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    .group-header-row td {
+      background: rgba(124,107,255,0.06);
+      color: var(--accent);
+      font-family: 'Syne', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 0.6rem 1rem;
+      border: 1px solid var(--border);
+    }
+    .synthese-full-table tr:hover td:not(.group-header-row td) {
+      background: rgba(255,255,255,0.02);
     }
 
     /* CERTIFICATIONS */
@@ -1162,97 +1267,137 @@
     <p class="section-intro">Tableau de synthèse des réalisations professionnelles — BTS SIO Session 2026.</p>
 
     <div class="synthese-wrapper">
+
+      <!-- EN-TÊTE OFFICIEL -->
       <div class="synthese-header">
         <div class="synthese-header-info">
           <div class="synthese-title-main">BTS Services Informatiques aux Organisations — Session 2026</div>
           <div class="synthese-meta-row">
-            <span>Baïjou-Dika Laina</span>
+            <span><strong>NOM :</strong> Baïjou-Dika Laina</span>
             <span>·</span>
-            <span>Lycée Pierre Poivre</span>
+            <span><strong>Centre :</strong> Lycée Pierre Poivre</span>
             <span>·</span>
-            <span>Option SLAM</span>
+            <span class="option-badge">☑ SLAM</span>
+            <span class="option-badge-off">☐ SISR</span>
           </div>
-          <div class="synthese-url">
-            🌐 <a href="https://lainabaijou-dika.github.io/" target="_blank">https://lainabaijou-dika.github.io/</a>
-          </div>
+          <div class="synthese-url">🌐 <a href="https://lainabaijou-dika.github.io/" target="_blank">https://lainabaijou-dika.github.io/</a></div>
         </div>
+        <a href="tableau_synthese.pdf" download class="btn-attestation" style="flex-shrink:0;align-self:center;">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          Télécharger le tableau officiel (PDF)
+        </a>
       </div>
 
+      <!-- GRAND TABLEAU AVEC COMPÉTENCES -->
       <div class="synthese-block">
-        <div class="synthese-block-title">📚 Réalisations en cours de formation</div>
+        <div class="synthese-block-title">📋 Tableau complet des réalisations et compétences</div>
         <div class="synthese-table-wrap">
-          <table class="synthese-table">
+          <table class="synthese-full-table">
             <thead>
               <tr>
-                <th>Réalisation</th>
-                <th>Période</th>
+                <th rowspan="2" class="th-realisation">Réalisations professionnelles</th>
+                <th rowspan="2" class="th-periode">Période</th>
+                <th colspan="6" class="th-competences-title">Compétences mises en œuvre</th>
+              </tr>
+              <tr>
+                <th class="th-comp">Gérer le patrimoine informatique</th>
+                <th class="th-comp">Répondre aux incidents et demandes</th>
+                <th class="th-comp">Développer la présence en ligne</th>
+                <th class="th-comp">Travailler en mode projet</th>
+                <th class="th-comp">Mettre à disposition un service</th>
+                <th class="th-comp">Organiser son développement professionnel</th>
               </tr>
             </thead>
             <tbody>
+              <!-- TITRE GROUPE 1 -->
+              <tr class="group-header-row">
+                <td colspan="8">📚 Réalisations en cours de formation</td>
+              </tr>
               <tr>
                 <td>Logiciel de gestion de bibliothèque (Windows Form)</td>
-                <td>Avr. 2025</td>
+                <td class="td-period">22/04/2025</td>
+                <td class="td-check"></td>
+                <td class="td-check"></td>
+                <td class="td-check"></td>
+                <td class="td-check checked">▸</td>
+                <td class="td-check checked">▸</td>
+                <td class="td-check checked">▸</td>
               </tr>
               <tr>
                 <td>Logiciel de gestion d'une pharmacie (Java)</td>
-                <td>Oct. 2025 — Avr. 2026</td>
+                <td class="td-period">10/2025 – 04/2026</td>
+                <td class="td-check"></td>
+                <td class="td-check checked">▸</td>
+                <td class="td-check"></td>
+                <td class="td-check checked">▸</td>
+                <td class="td-check checked">▸</td>
+                <td class="td-check checked">▸</td>
               </tr>
               <tr>
                 <td>Site web pour un cinéma (PHP)</td>
-                <td>Oct. 2025 — Avr. 2026</td>
+                <td class="td-period">10/2025 – 04/2026</td>
+                <td class="td-check"></td>
+                <td class="td-check"></td>
+                <td class="td-check checked">▸</td>
+                <td class="td-check checked">▸</td>
+                <td class="td-check checked">▸</td>
+                <td class="td-check checked">▸</td>
               </tr>
               <tr>
                 <td>Application mobile de gestion du stationnement dans un parking (borne de stationnement)</td>
-                <td>Oct. 2025 — Avr. 2026</td>
+                <td class="td-period">10/2025 – 04/2026</td>
+                <td class="td-check"></td>
+                <td class="td-check"></td>
+                <td class="td-check checked">▸</td>
+                <td class="td-check checked">▸</td>
+                <td class="td-check checked">▸</td>
+                <td class="td-check checked">▸</td>
               </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
 
-      <div class="synthese-block">
-        <div class="synthese-block-title">🏢 Réalisations en milieu professionnel — 1ère année</div>
-        <div class="synthese-table-wrap">
-          <table class="synthese-table">
-            <thead>
-              <tr>
-                <th>Réalisation</th>
-                <th>Période</th>
+              <!-- TITRE GROUPE 2 -->
+              <tr class="group-header-row">
+                <td colspan="8">🏢 Réalisations en milieu professionnel — 1ère année</td>
               </tr>
-            </thead>
-            <tbody>
               <tr>
-                <td>Redéploiement d'images système et remise en service du parc informatique du lycée Paule Langevin</td>
-                <td>02/06/2025 — 27/06/2025</td>
+                <td>Redéploiement d'images système et remise en service du parc informatique du lycée Paul Langevin</td>
+                <td class="td-period">02/06/2025 – 27/06/2025</td>
+                <td class="td-check checked">▸</td>
+                <td class="td-check checked">▸</td>
+                <td class="td-check"></td>
+                <td class="td-check checked">▸</td>
+                <td class="td-check checked">▸</td>
+                <td class="td-check checked">▸</td>
               </tr>
               <tr>
                 <td>Gestion de GLPI</td>
-                <td>02/06/2025 — 27/06/2025</td>
+                <td class="td-period">02/06/2025 – 27/06/2025</td>
+                <td class="td-check checked">▸</td>
+                <td class="td-check checked">▸</td>
+                <td class="td-check"></td>
+                <td class="td-check"></td>
+                <td class="td-check checked">▸</td>
+                <td class="td-check checked">▸</td>
+              </tr>
+
+              <!-- TITRE GROUPE 3 -->
+              <tr class="group-header-row">
+                <td colspan="8">🏢 Réalisations en milieu professionnel — 2ème année</td>
+              </tr>
+              <tr>
+                <td>Développement d'un site web pour une agence immobilière avec interconnexion CRM (Nat-Immobilier)</td>
+                <td class="td-period">14/01/2026 – 24/02/2026</td>
+                <td class="td-check"></td>
+                <td class="td-check"></td>
+                <td class="td-check checked">▸</td>
+                <td class="td-check checked">▸</td>
+                <td class="td-check checked">▸</td>
+                <td class="td-check checked">▸</td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
 
-      <div class="synthese-block">
-        <div class="synthese-block-title">🏢 Réalisations en milieu professionnel — 2ème année</div>
-        <div class="synthese-table-wrap">
-          <table class="synthese-table">
-            <thead>
-              <tr>
-                <th>Réalisation</th>
-                <th>Période</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Développement d'un site web pour une agence immobilière (Nat-Immobilier) avec interconnexion CRM</td>
-                <td>14/01/2026 — 24/02/2026</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
     </div>
   </section>
 
